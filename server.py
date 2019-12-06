@@ -195,7 +195,9 @@ from the list that was created at the beginning of
 the program"""
 def remove(conn): 
     if conn in list_of_clients: 
-        list_of_clients.remove(conn) 
+        list_of_clients.remove(conn)
+        list_of_channels.remove_all_via_conn(conn) 
+
   
 while True: 
   

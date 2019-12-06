@@ -28,6 +28,12 @@ class channel_list:
                 self.list_of_channels.remove(x)
                 return
 
+    def remove_all_via_conn(self, conn):
+        for x in self.list_of_channels:
+            for y in x.participants:
+                if y.conn == conn:
+                    x.participants.remove(y)
+
     def remove_user_all_channels(self, user):
         for x in self.list_of_channels:
             if x.check_if_user_in_channel(user) == True:
